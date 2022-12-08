@@ -9,7 +9,8 @@ function random_bg_color() {
     var z = Math.floor(Math.random() * 256);
     var bgColor = "rgb(" + x + "," + y + "," + z + ")";
 
-    this.style.background = bgColor;
+    // ne pas oublier le retrun
+    return bgColor
 }
 
 // add event when you press a key
@@ -18,7 +19,7 @@ window.addEventListener("keydown", (event) => {
       return; // Do nothing if the event was already processed
     }
 
-    //teeeeeeeeeeest
+
 // define the case
 switch (event.key) {
     // create a block 
@@ -28,7 +29,7 @@ switch (event.key) {
     case "ArrowRight":
         const newbox = box.cloneNode()
         board.appendChild(newbox)
-        random_bg_color()
+        newbox.style.backgroundColor = random_bg_color()
         break;
 
     // remove a block
