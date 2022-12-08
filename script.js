@@ -19,7 +19,6 @@ window.addEventListener("keydown", (event) => {
       return; // Do nothing if the event was already processed
     }
 
-
 // define the case
 switch (event.key) {
     // create a block 
@@ -30,6 +29,9 @@ switch (event.key) {
         const newbox = box.cloneNode()
         board.appendChild(newbox)
         newbox.style.backgroundColor = random_bg_color()
+        newbox.addEventListener("click", function(){
+            newbox.style.backgroundColor = "black"
+        })
         break;
 
     // remove a block
